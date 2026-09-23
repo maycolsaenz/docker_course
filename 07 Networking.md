@@ -41,7 +41,7 @@ docker pull wbitt/network-multitool
 ## 1.3. Crear contenedores en la red net-lab y asignar ip estáticas:
 ```vim
 docker run --name server_a --network net-lab -d --ip 192.168.0.2 wbitt/network-multitool
-docker run --name server_b --network net-lab -d --ip 192.168.0.3 wbitt/network-multitool
+c
 docker run --name server_c --network net-lab -d --ip 192.168.0.4 wbitt/network-multitool
 ```
 

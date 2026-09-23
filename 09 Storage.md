@@ -66,7 +66,7 @@ docker volume inspect data
 ```vim
 docker run -it --rm --name demo-vol --mount source=data,destination=/data ubuntu
 ```
-
+El --rm: cuando el contener es eliminado, se borra también en el archivo (queda en el host en este caso).
 > otra opción: -v data:/data
 
 > :ro = modo solo lectura
