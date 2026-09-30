@@ -180,7 +180,7 @@ docker compose ps
 docker compose logs
 ```
 > El loadbalancer espera 3 copias
-> host not found in upstream ...
+> host not found in upstream ... colocarle el nombre correcto de nuestro contenedor.
 ## 9.8. Escalar 3 replicas
 ```sh
 docker compose down
