@@ -1,5 +1,5 @@
 networks:
-  net-monitoreo:
+  net-monitoreo: # Todo debajo es optional. Podria quedar aqui.
     name: net-monitoreo
     driver: bridge
     ipam:
@@ -8,7 +8,7 @@ networks:
         - subnet: 12.0.0.0/27
           gateway: 12.0.0.1
 
-volumes:
+volumes: #discos virtuales
   grafana-data: {}
   prometheus-data: {}
 
@@ -46,7 +46,7 @@ services:
     - /:/rootfs:ro
     - /var/run:/var/run:rw
     - /sys:/sys:ro
-    - /var/lib/docker/:/var/lib/docker:ro
+    - /var/lib/docker/:/var/lib/docker:ro #read only
     networks:
     - net-monitoreo
     depends_on:
@@ -78,9 +78,9 @@ services:
   grafana:
     image: grafana/grafana-enterprise:latest
     container_name: grafana
-    mem_limit: 200m
+    mem_limit: 512m
     # mem_reservation: 100m
-    memswap_limit: 200m
+    memswap_limit: 512m
     cpus: 0.5
     volumes:
     - grafana-data:/var/lib/grafana
